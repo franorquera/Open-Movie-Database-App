@@ -1,13 +1,15 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ movies_url }) => {
+
     return (
         <StyledNav>
-            <h1><a id="logo" href="/">Movie Web Page</a></h1>
+            <h1 id="logo"><Link to="/">Cine App</Link></h1>
             <ul>
                 <li>
-                    <a href="/">Home</a>
-                    <a href="/favourite">Favourite Movies</a>
+                    <Link to="/">Home</Link>
+                    <Link to="/favourite">Favourite Movies</Link>
                 </li>
             </ul>
         </StyledNav>
@@ -38,7 +40,7 @@ const StyledNav = styled.nav`
             padding-left: 5rem;
         }
     }
-    
+
     #logo {
         font-size: 1.5rem;
         font-family: "Lobster", cursive;

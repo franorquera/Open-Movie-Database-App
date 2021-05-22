@@ -7,15 +7,13 @@ import { movies_url } from "./api";
 import GlobalStyle from "./components/GlobalStyle";
 // Style
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Switch, Route } from "react-router-dom";
-// Redux
-import { useSelector } from "react-redux";
+import { Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <GlobalStyle />
       <Nav />
+      <GlobalStyle />
       <Switch>
         <Route path="/" exact>
           <Home movies_url={movies_url} />
