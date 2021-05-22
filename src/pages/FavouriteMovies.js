@@ -1,12 +1,19 @@
 import styled from "styled-components";
 import { Card, Button } from "react-bootstrap"
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { CardStyle } from "../components/CardStyleComponent";
+import removeFavouriteMovie from "../actions/removeFavouriteMovie";
 
 const FavouriteMovies = () => {
 
     const favouriteMovies = useSelector(store => store)
     const arrayOfFavouriteMovies = favouriteMovies.favourite
+    const dispatch = useDispatch();
+
+    const removeMovie = (movie) => {
+        console.log(movie)
+        //dispatch(removeFavouriteMovie(movie))
+    }
 
     return (
         <CardStyle>
@@ -20,7 +27,7 @@ const FavouriteMovies = () => {
                                 <Card.Text className="movie-info">
                                     {movie.Year | movie.Type}
                                 </Card.Text>
-                                <Button className="moive-button" variant="primary">Remove ❌</Button>
+                                <Button onClick={() => removeMovie(movie)} className="moive-button" variant="primary">Remove ❌</Button>
                             </Card.Body>
                         </Card>
                     ))

@@ -1,14 +1,13 @@
 import { Card, Button } from "react-bootstrap"
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 import addFavouriteMovie from "../actions/addFavouriteMovie";
 import { CardStyle } from "../components/CardStyleComponent";
 
 const MovieList = ({ movies }) => {
     const dispatch = useDispatch();
 
-    const sendMovieToStore = (title) => {
-        dispatch(addFavouriteMovie(title));
+    const sendMovieToStore = (movie) => {
+        dispatch(addFavouriteMovie(movie));
     }
 
     return (
